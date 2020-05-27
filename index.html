@@ -1,16 +1,14 @@
 ---
 layout: default
-title: VoidAsh: Ashish Thapa
+title: VoidAsh; Ashish Thapa
 ---
 <div class="blurb">
-{% for post in site.posts %}
-		<entry>
-			<title>{{ post.title }}</title>
-			<link href="http://voidash.github.io{{ post.url }}"/>
-			<updated>{{ post.date | date_to_xmlschema }}</updated>
-			<id>http://voidash.github.io{{ post.id }}</id>
-			<content type="html">{{ post.content | xml_escape }}</content>
-		</entry>
-	{% endfor %}
+	<h1>{{ page.title }}</h1>
+	<ul class="posts">
+
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
 </div><!-- /.blurb -->
 
